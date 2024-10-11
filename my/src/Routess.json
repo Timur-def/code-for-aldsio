@@ -1,0 +1,7 @@
+{
+    "ROUTES":[
+        {"route": "/", "title": "Наши товары"},
+        {"route": "/descriptionStore",  "title": "О магазине"},
+        {"route": "/feedback", "title": "Отзывы"}
+    ]
+}
