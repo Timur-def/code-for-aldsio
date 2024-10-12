@@ -1,7 +1,9 @@
+import FeedbackCard from "./feedbackCard/FeedbackCard";
+
 export default function Feedback() {
     return(
         <>
-            <h1>Feedback</h1>
+            <FeedbackCard/>
         </>
     )
 }

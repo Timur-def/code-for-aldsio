@@ -1,0 +1,5 @@
+{
+    "ROUTES":[
+        {"route": "/orderHoney", "title": "Оформление заказа"}
+    ]
+}

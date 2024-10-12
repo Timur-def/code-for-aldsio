@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+
+.FBCard{
+    display: flex;
+    width: 20vw;
+    height: 5vw;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: white;
+    text-wrap: wrap;
+}
