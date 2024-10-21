@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+.App{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(255, 217, 0);
+    border-bottom: 2px solid rgb(216, 184, 0);
+    display: flex;
+    flex-direction: row;
+
+    &__logo{
+        margin-left: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+    &__StoreTitle{
+        margin-top: 15px;
+    }
+
+    &__pageTitle{
+        margin-left: auto;
+        margin-top: 20px;
+        margin-right: 30px;
+    }
+
+    
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+    &__products{
+        width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    &__productCategory{
+        display: flex;
+        height: 100%;
+        width: 10vw;
+        flex-direction: column;
+        background-color: rgb(255, 217, 0);
+    }
+}
+
+.search{
+    width: 100%;
+    height: 20px;
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &__inp{
+        height: 100%;
+        width: 80%;
+        border-radius: 10px;
+        border: none;
+    }
+
+    &__logo{
+        height: 100%;
+        width: 20%;
+    }
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+
+    &__card{
+        background-color: white;
+        height: 25px;
+        width: 9vw;
+        border-radius: 5px;
+        cursor: pointer;
+        list-style: none;
+        text-align: center;
+        text-decoration: none;
+        margin-right: 40px;
+
+        &:active{
+            background-color: rgb(233, 233, 233);
+        }
+    }
+}
+
+.logoBtn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15%;
+    margin-right: 3vw;
+    cursor: pointer;
+
+    &__basket{
+        height: 35px;
+        width: 35px;
+    }
+
+    &__plane{
+        height: 32px;
+        width: 32px;
+    }
+
+    &__notification{
+        height: 36px;
+        width: 36px;
+    }
+}
