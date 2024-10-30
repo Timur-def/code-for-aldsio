@@ -1,0 +1,72 @@
+.descriptionStore {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  height: 108vh;
+  flex-direction: row;
+  background-color: #ffd900;
+
+  &__headingsLeft {
+    background: linear-gradient(to  right, #ffd900, #ffc400);
+    height: 108vh;
+    width: 40vw;
+  }
+
+  &__headingsRight {
+    background: linear-gradient(to  left, #ffd900, #ffc400);
+    height: 108vh;
+    width: 40vw;
+  }
+  &__heading1 {
+    position: absolute;
+    top: 6%;
+    left: 8%;
+    width: 450px;
+    height: auto;
+    background-color: #ffedc8;
+    border-radius: 15px;
+    border: 5px solid #ffedc8;
+  }
+  &__heading2 {
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    width: 450px;
+    height: auto;
+    background-color: #ffedc8;
+    border-radius: 15px;
+    border: 5px solid #ffedc8;
+  }
+  &__heading3 {
+    position: absolute;
+    bottom: 35%;
+    left: 5%;
+    width: 450px;
+    height: auto;
+    background-color: #ffedc8;
+    border-radius: 15px;
+    border: 5px solid #ffedc8;
+  }
+  &__heading4 {
+    position: absolute;
+    bottom: 17%;
+    right: 5%;
+    width: 450px;
+    height: auto;
+    background-color: #ffedc8;
+    border-radius: 15px;
+    border: 5px solid #ffedc8;
+  }
+
+  &__heading5 {
+    position: absolute;
+    bottom: 7%;
+    right: 45%;
+    width: 450px;
+    height: auto;
+    background-color: #ffedc8;
+    border-radius: 15px;
+    border: 5px solid #ffedc8;
+  }
+}

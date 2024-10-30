@@ -1,5 +1,4 @@
 import "./OrderHoney.scss";
-import dataProducts from "./dateProduct";
 export default function OrderHoney() {
   return (
     <>
@@ -8,12 +7,4 @@ export default function OrderHoney() {
       </div>
     </>
   );
-}
-
-{
-  /* {dataProducts.PRODUCT.map((item, index)=>{
-            return(
-                
-            )
-        })} */
 }
