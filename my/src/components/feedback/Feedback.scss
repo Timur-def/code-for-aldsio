@@ -1,0 +1,84 @@
+.feedbacks {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  overflow-y: hidden;
+}
+
+.addFeedback {
+  display: flex;
+  width: 30vw;
+  height: 15vh;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #000;
+  margin-top: 15px;
+  margin-left: 15px;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  &__link {
+    text-decoration: none;
+    &:active {
+      color: #000000;
+    }
+  }
+}
+
+.feedbackList{
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-direction: column-reverse;
+  height: 84vh;
+  margin-left: auto;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.AddFD{
+  width: 30vw;
+  height: 50vh;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 2px solid black;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+.estimation{
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
+
+.author{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.feedback-text{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.product{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.option{
+  font-weight: 500;
+  font-size: 15px;
+}

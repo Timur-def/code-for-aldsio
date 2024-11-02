@@ -1,0 +1,15 @@
+.cardDescription {
+  margin-top: 20px;
+  width: 50vw;
+  height: 85vh;
+  background-color: #fff;
+  border: 5px solid #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__Descr {
+    width: 40vw;
+  }
+}

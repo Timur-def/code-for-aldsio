@@ -5,6 +5,9 @@
 html,
 body {
   overflow-x: hidden;
+  background-attachment: fixed;
+  background: linear-gradient(to bottom right, #ffd900, #ffc400);
+  overflow-y: hidden;
 }
 
 .App {
@@ -13,7 +16,6 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden
 }
 
 .square {
@@ -53,7 +55,6 @@ body {
   display: flex;
   flex-direction: row;
   height: 108vh;
-  background: linear-gradient(to  bottom right, #ffd900, #ffc400);
 
   &__products {
     margin-right: 50px;
@@ -61,21 +62,18 @@ body {
     height: 108vh;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px; 
+    gap: 8px;
     justify-content: center;
   }
 
   &__productCategory {
     font-weight: 500;
     display: flex;
-    height: 108vh;
     width: 10vw;
     flex-direction: column;
     background-color: #ffc400;
   }
 }
-
-
 
 .category {
   display: flex;
@@ -84,8 +82,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  &__link{
-
+  &__link {
     text-decoration: none;
   }
 
@@ -118,15 +115,27 @@ body {
   &__basket {
     height: 35px;
     width: 35px;
+    &:hover{
+      height: 40px;
+      width: 40px;
+    }
   }
 
   &__plane {
     height: 32px;
     width: 32px;
+    &:hover{
+      height: 37px;
+      width: 37px;
+    }
   }
 
   &__notification {
     height: 36px;
     width: 36px;
+    &:hover{
+      height: 41px;
+      width: 41px;
+    }
   }
 }

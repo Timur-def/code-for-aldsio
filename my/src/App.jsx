@@ -6,17 +6,16 @@ import InpSearchResults from "./components/inpSearchResults/InpSearchResults";
 import { GiTreeBeehive } from "react-icons/gi";
 import { Routes, Route, Link } from "react-router-dom";
 import Routess from "./components/allProduct/Routess.json";
-import { useState, useEffect
- } from "react";
+import { useState } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 import { PiPaperPlaneRightFill } from "react-icons/pi";
 import { MdNotifications } from "react-icons/md";
 import OrderHoney from "./components/allProduct/honeyCard/orderHoney/OrderHoney";
 import DescriptionProduct from "./components/allProduct/descriptionProduct/DescriptionProduct";
 
+
 function App() {
   const [page, setPage] = useState(localStorage.getItem("title") || "");
-  
   return (
     <div className="App">
       <header className="header">
