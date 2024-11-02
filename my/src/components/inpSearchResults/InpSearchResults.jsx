@@ -8,6 +8,7 @@ export default function InpSearchResults() {
   const inpSearchRef = useRef();
   const [searchResults, setSearchResults] = useState([]);
 
+
   const listSearchProduct = () => {
     const searchValue = inpSearchRef.current.value.toLowerCase(); // Получаем значение из поля ввода и приводим к нижнему регистру
     if (searchValue === "") {
@@ -31,6 +32,7 @@ export default function InpSearchResults() {
   const handleSearchChange = () => {
     listSearchProduct();
   };
+ 
   return (
     <>
       <div className="search">
@@ -45,11 +47,12 @@ export default function InpSearchResults() {
 
       <div className="search__results">
         {searchResults.map((product, indexProduct) => (
-          <Link to={`/DescriptionProduct`}>
+          <Link to={`/DescriptionProduct`} state={{ description: product.description }}>
           <div key={indexProduct} className="search__result">
             {product.title}{" "}
           </div>
           </Link>
+          
         ))}
       </div>
     </>

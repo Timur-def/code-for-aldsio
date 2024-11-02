@@ -12,7 +12,7 @@ import { PiPaperPlaneRightFill } from "react-icons/pi";
 import { MdNotifications } from "react-icons/md";
 import OrderHoney from "./components/allProduct/honeyCard/orderHoney/OrderHoney";
 import DescriptionProduct from "./components/allProduct/descriptionProduct/DescriptionProduct";
-
+import Cart from "./components/cart/Cart";
 
 function App() {
   const [page, setPage] = useState(localStorage.getItem("title") || "");
@@ -25,7 +25,7 @@ function App() {
         <div className="logoBtn">
           <MdNotifications className="logoBtn__notification" />
           <PiPaperPlaneRightFill className="logoBtn__plane" />
-          <FaShoppingBasket className="logoBtn__basket" />
+          <Link to={"/cart"}><FaShoppingBasket className="logoBtn__basket" /></Link>
         </div>
       </header>
       <main className="body">
@@ -61,6 +61,7 @@ function App() {
               path="/descriptionProduct"
               element={<DescriptionProduct />}
             />
+            <Route path="/cart" element={<Cart/>}/>
           </Routes>
         </div>
       </main>
