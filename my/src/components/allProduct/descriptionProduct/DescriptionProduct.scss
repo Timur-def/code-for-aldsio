@@ -10,6 +10,13 @@
   align-items: center;
 
   &__Descr {
+    margin-top: 10px;
     width: 40vw;
+  }
+  &__image{
+    width: 40vw;
+    height: 70%;
+    border-radius: 15px;
+    margin-top: 20px;
   }
 }

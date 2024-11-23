@@ -2,7 +2,8 @@
   "ROUTES_APP": [
     { "route": "/", "title": "О магазине" },
     { "route": "/allProduct", "title": "Наши товары" },
-    { "route": "/feedback", "title": "Отзывы" }
+    { "route": "/feedback", "title": "Отзывы" },
+    { "route": "/recipes", "title": "Рецепты" }
   ],
   "ROUTES_HONEYCARD": [
     { "route": "/orderHoney", "title": "order" },

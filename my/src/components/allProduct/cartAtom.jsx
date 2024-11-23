@@ -1,3 +1,3 @@
 import { atom } from 'jotai';
 
-export const cartAtom = atom([]);
+export const cartAtom = atom(JSON.parse(localStorage.getItem("cart")) || []);

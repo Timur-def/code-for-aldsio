@@ -6,7 +6,8 @@ html,
 body {
   overflow-x: hidden;
   background-attachment: fixed;
-  background: linear-gradient(to bottom right, #ffd900, #ffc400);
+  //background: linear-gradient(to bottom right, #ffd447, #ffea73);
+  background-color: #ffd447;
   overflow-y: hidden;
 }
 
@@ -17,15 +18,6 @@ body {
   height: 100vh;
   position: relative;
 }
-
-.square {
-  position: absolute;
-  width: 50px; /* Ширина квадрата */
-  height: 50px; /* Высота квадрата */
-  background-color: black; /* Цвет квадрата */
-  z-index: 0;
-}
-
 .header {
   width: 100vw;
   height: 8vh;
@@ -111,31 +103,66 @@ body {
   gap: 15%;
   margin-right: 3vw;
   cursor: pointer;
+  
 
   &__basket {
     height: 35px;
     width: 35px;
+    color: black;
+    transition: .2s;
     &:hover{
       height: 40px;
       width: 40px;
     }
   }
 
-  &__plane {
-    height: 32px;
-    width: 32px;
+  &__filter {
+    height: 36px;
+    width: 36px;
+    color: black;
+    transition: .2s;
     &:hover{
-      height: 37px;
-      width: 37px;
+      height: 41px;
+      width: 41px;
     }
   }
 
   &__notification {
     height: 36px;
     width: 36px;
+    color: black;
+    transition: .2s;
     &:hover{
       height: 41px;
       width: 41px;
     }
   }
 }
+
+.basket{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 15px; /* Ширина скроллбара */
+  
+}
+
+::-webkit-scrollbar-track {
+  background: #ffb647; /* Цвет фона скроллбара */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffd08a; /* Цвет ползунка */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffc368
+}
+
+

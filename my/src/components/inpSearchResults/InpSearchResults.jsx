@@ -16,7 +16,7 @@ export default function InpSearchResults() {
       return;
     }
     const results = dateProduct.PRODUCT.filter(
-      (prdct) => prdct.title.toLowerCase().includes(searchValue) // Предполагаем, что у каждого продукта есть свойство name
+      (prdct) => prdct.title.toLowerCase().includes(searchValue) 
     );
     const sortedResults = results.sort((a, b) => {
       const aMatchIndex = a.title.toLowerCase().indexOf(searchValue);
@@ -47,10 +47,10 @@ export default function InpSearchResults() {
 
       <div className="search__results">
         {searchResults.map((product, indexProduct) => (
-          <Link to={`/DescriptionProduct`} state={{ description: product.description }}>
-          <div key={indexProduct} className="search__result">
+          <Link to={`/DescriptionProduct`} className="search__result" state={{ description: product.description }}>
+          <p key={indexProduct} >
             {product.title}{" "}
-          </div>
+          </p>
           </Link>
           
         ))}

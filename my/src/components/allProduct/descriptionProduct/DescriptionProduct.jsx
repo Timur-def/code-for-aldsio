@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
-import "./DescriptionProduct.scss"
+import "./DescriptionProduct.scss";
 export default function DescriptionProduct() {
   const location = useLocation();
-  const { description } = location.state || {}; // Получаем описание из state
+  const { description, image } = location.state || {}; // Получаем описание из state
 
   return (
     <div className="cardDescription">
@@ -12,7 +12,7 @@ export default function DescriptionProduct() {
       ) : (
         <p>Описание не доступно</p>
       )}
-      <div className="cardDescription__image">Image</div>
+      <img src={image} className="cardDescription__image" />
     </div>
   );
 }

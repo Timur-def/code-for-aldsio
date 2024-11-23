@@ -11,3 +11,21 @@
   width: 90vw;
   justify-content: center;
 }
+
+.modalWindowFilter{
+  margin-top: 15px;
+  height: 30vh;
+  width: 60vw;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.filterCategory{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.honeyCard{
+  margin-bottom: 15px;
+}
