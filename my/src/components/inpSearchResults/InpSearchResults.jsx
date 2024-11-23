@@ -47,7 +47,7 @@ export default function InpSearchResults() {
 
       <div className="search__results">
         {searchResults.map((product, indexProduct) => (
-          <Link to={`/DescriptionProduct`} className="search__result" state={{ description: product.description }}>
+          <Link to={`/DescriptionProduct`} className="search__result" state={{ description: product.description, image: product.image }}>
           <p key={indexProduct} >
             {product.title}{" "}
           </p>
