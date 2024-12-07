@@ -1,11 +1,30 @@
-.cart_HoneyCard {
+
+.cart{
   display: flex;
-  margin-top: 20px;
-  margin-left: 20px;
-  gap: 15px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow-y: auto;
-  height: 90vh;
-  width: 90vw;
+  justify-content: center;
+  margin-left: 100px;
+  &_HoneyCards {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: 80vh;
+    width: 80vw;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+  }
+
+  &_headText{
+    height: 10vh;
+    position: absolute;
+    top: 20px;
+  }
+
+  &_text{
+    margin-top: 90px;
+  }
 }

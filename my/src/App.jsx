@@ -1,6 +1,6 @@
 import "./App.scss";
 import AllProduct from "./components/allProduct/AllProduct";
-import DescriptionStore from "./components/descriptionStore/DescriptionStore";
+import Main from "./components/main/Main";
 import Feedback from "./components/feedback/Feedback";
 import InpSearchResults from "./components/inpSearchResults/InpSearchResults";
 import { GiTreeBeehive } from "react-icons/gi";
@@ -11,7 +11,6 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { MdNotifications, MdFilterListAlt } from "react-icons/md";
 import DescriptionProduct from "./components/allProduct/descriptionProduct/DescriptionProduct";
 import Cart from "./components/cart/Cart";
-import Recipes from "./components/recipes/Recipes";
 
 function App() {
   const [page, setPage] = useState(localStorage.getItem("title") || "");
@@ -25,24 +24,12 @@ function App() {
   };
   return (
     <div className="App">
-      <header className="header">
-        <GiTreeBeehive className="header__logo" />
-        <h1 className="header__StoreTitle">Bee Store</h1>
-        <h2 className="header__pageTitle">{page}</h2>
-        <div className="logoBtn">
-          <MdNotifications className="logoBtn__notification" />
-          <MdFilterListAlt
-            className="logoBtn__filter"
-            onClick={isModalFilter}
-          />
-          
-          <Link to={"/cart"} className="logoBtn__basket">
-            <FaShoppingBasket className="basket" />
-          </Link>
-        </div>
-      </header>
       <main className="body">
         <div className="body__productCategory">
+          <div className="header">
+            <GiTreeBeehive className="header__logo" />
+            <h1 className="header__StoreTitle">Bee Store</h1>
+          </div>
           <InpSearchResults />
           <nav>
             <ol className="category">
@@ -56,20 +43,37 @@ function App() {
                       }}
                       className="category__card"
                     >
-                      {item.title}
+                      <img className="category__logo" src={item.image} />
+                      <p className="category__title">{item.title}</p>
                     </li>
                   </Link>
                 );
               })}
+              <div className="basement">
+              <h2 className="basement__pageTitle">{page}</h2>
+              <div className="logoBtn">
+                <MdNotifications className="logoBtn__notification" />
+                <Link to={"/allProduct"} className="logoBtn__filter">
+                <MdFilterListAlt
+                  onClick={isModalFilter}
+                  className="filter"
+                />
+                </Link>
+
+                <Link to={"/cart"} className="logoBtn__basket">
+                  <FaShoppingBasket className="basket" />
+                </Link>
+              </div>
+              </div>
             </ol>
           </nav>
         </div>
         <div className="body__products">
           <Routes>
-            <Route path="/" element={<DescriptionStore />} />
+            <Route path="/" element={<Main />} />
             <Route
               path="/allProduct"
-              element={<AllProduct modalFilter={modalFilter}/>}
+              element={<AllProduct modalFilter={modalFilter} setModalFilter={setModalFilter} />}
             />
             <Route path="/feedback" element={<Feedback />} />
             <Route
@@ -77,11 +81,9 @@ function App() {
               element={<DescriptionProduct />}
             />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/recipes" element={<Recipes />} />
           </Routes>
         </div>
       </main>
-      <div className="basement"></div>
     </div>
   );
 }

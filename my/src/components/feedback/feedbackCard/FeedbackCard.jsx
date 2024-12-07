@@ -4,7 +4,7 @@ import FeedBack from "../feedbackList.json";
 export default function FeedbackCard() {
   return (
     <>
-      {FeedBack.FDList.map((item) => {
+      {FeedBack.FDList.slice().map((item) => {
         return (
           <div className="FBCard">
             <div className="FBCard__upBlock">

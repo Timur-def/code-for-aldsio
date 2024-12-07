@@ -34,7 +34,7 @@ export default function InpSearchResults() {
   };
  
   return (
-    <>
+    <div className="searchBlock">
       <div className="search">
         <input
           type="text"
@@ -55,6 +55,6 @@ export default function InpSearchResults() {
           
         ))}
       </div>
-    </>
+    </div>
   );
 }

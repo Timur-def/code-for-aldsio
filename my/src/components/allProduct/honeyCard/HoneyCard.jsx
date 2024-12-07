@@ -48,7 +48,7 @@ export default function HoneyCard({ data }) {
           <p className="card__title">{data.title}</p>
           <div className="card__btn">
             <button className="btn__buy" onClick={() => addToCart(data)}>
-              {order ? "Убрать" : "Заказать"}
+              {order ? "Убрать из корзины" : "В корзину"}
             </button>
           </div>
         </div>

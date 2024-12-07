@@ -9,12 +9,12 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h2>Корзина</h2>
+      <h1 className='cart_headText'>Корзина</h1>
       {cart.length === 0 ? (
-        <p>Корзина пуста</p>
+        <h1 className='cart_text'>Корзина пуста</h1>
       ) : (
-        <div  className='cart_HoneyCard'>
-        <ul>
+        <div>
+        <ul  className='cart_HoneyCards'>
           {cart.map((item, index) => (
              <HoneyCard key={index} data={item}/>
           ))}
@@ -25,4 +25,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Cart;  

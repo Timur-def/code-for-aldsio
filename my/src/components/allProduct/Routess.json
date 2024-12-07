@@ -1,9 +1,8 @@
 {
   "ROUTES_APP": [
-    { "route": "/", "title": "О магазине" },
-    { "route": "/allProduct", "title": "Наши товары" },
-    { "route": "/feedback", "title": "Отзывы" },
-    { "route": "/recipes", "title": "Рецепты" }
+    { "image":"/img-category/store.png", "route": "/", "title": "Главная" },
+    { "image":"/img-category/tovar.png","route": "/allProduct", "title": "Наши товары" },
+    { "image":"/img-category/feedback.png","route": "/feedback", "title": "Отзывы" }
   ],
   "ROUTES_HONEYCARD": [
     { "route": "/orderHoney", "title": "order" },

@@ -1,0 +1,83 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 108vh;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+
+  &__blocks {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 30px;
+  }
+  &__block-recommendation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.descrStr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  border-right: 5px solid white;
+  margin-right: 10px;
+  &__textDescr {
+    display: flex;
+    text-wrap: wrap;
+    text-align: center;
+    margin-top: 21px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.down-container {
+  display: flex;
+  flex-direction: row;
+  width: 70vw;
+  height: 25vh;
+  border-radius: 10px;
+  border: 5px solid white;
+  margin-top: 180px;
+}
+
+.contactInf {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 10px;
+  position: relative;
+  &__upForEmail{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  &__e-mail {
+    margin-top: 12px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__numPhone {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  &__block{
+    left: 0%;
+    top: 12%;
+    position: absolute;
+  }
+}
