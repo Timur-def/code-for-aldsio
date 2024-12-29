@@ -1,15 +1,13 @@
 .cards {
   display: flex;
-  position: absolute;
-  top: 5%;
-  left: 17%;
   gap: 15px;
   flex-direction: row;
   flex-wrap: wrap;
   overflow-y: auto;
-  height: 90vh;
-  width: 80vw;
+  max-height: 100vh;
+  width:95vw;
   justify-content: center;
+  align-items: center;
 }
 
 .modalWindowFilter {

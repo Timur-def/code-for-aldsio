@@ -1,12 +1,23 @@
 {
   "ROUTES_APP": [
-    { "image":"/img-category/store.png", "route": "/", "title": "Главная" },
-    { "image":"/img-category/tovar.png","route": "/allProduct", "title": "Наши товары" },
-    { "image":"/img-category/feedback.png","route": "/feedback", "title": "Отзывы" }
+    { "image": "/img-category/store.png", "route": "/", "title": "Главная" },
+    {
+      "image": "/img-category/tovar.png",
+      "route": "/allProduct",
+      "title": "Наши товары"
+    },
+    {
+      "image": "/img-category/feedback.png",
+      "route": "/feedback",
+      "title": "Отзывы"
+    }
   ],
   "ROUTES_HONEYCARD": [
     { "route": "/orderHoney", "title": "order" },
     { "route": "/descriptionProduct", "title": "description" }
   ],
-  "ROUTES_LOGO": [{ "route": "/cart", "title": "cart" }]
+  "ROUTES_LOGO": [
+    { "route": "/cart", "title": "cart" },
+    { "route": "/quest", "title": "quest" }
+  ]
 }

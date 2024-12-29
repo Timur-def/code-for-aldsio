@@ -1,6 +1,6 @@
 .cardDescription {
-  margin-top: 8px;
-  width: 50vw;
+  margin-bottom: 80px;
+  width: 45vw;
   height:90vh;
   background-color: #fff;
   border: 5px solid #fff;
@@ -12,13 +12,22 @@
   &__Descr {
     margin-top: 8px;
     width: 40vw;
-    text-align: center;
   }
   &__image{
-    width: 40vw;
-    height: 77%;
+    height: 90%;
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: 5px;
     object-fit: cover;
+    margin-bottom: 20px;
+  }
+  &__price{
+    display: flex-start;
+    width: 40vw;
+    margin-top: 10px;
+  }
+  &__bottomBlock{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
   }
 }

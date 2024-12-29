@@ -7,13 +7,14 @@ import { GiTreeBeehive } from "react-icons/gi";
 import { Routes, Route, Link } from "react-router-dom";
 import Routess from "./components/allProduct/Routess.json";
 import { useState } from "react";
-import { FaShoppingBasket } from "react-icons/fa";
-import { MdNotifications, MdFilterListAlt } from "react-icons/md";
+import { FaShoppingBasket, FaQuestion } from "react-icons/fa";
+import { MdFilterListAlt } from "react-icons/md";
 import DescriptionProduct from "./components/allProduct/descriptionProduct/DescriptionProduct";
 import Cart from "./components/cart/Cart";
+import FAQ from "./components/faq/Faq";
 
 function App() {
-  const [page, setPage] = useState(localStorage.getItem("title") || "");
+  const [page, setPage]=useState(localStorage.getItem("title") || "");
   const [modalFilter, setModalFilter] = useState(false);
   const isModalFilter = () => {
     if (!modalFilter) {
@@ -30,8 +31,8 @@ function App() {
             <GiTreeBeehive className="header__logo" />
             <h1 className="header__StoreTitle">Bee Store</h1>
           </div>
-          <InpSearchResults />
-          <nav>
+          <nav className="nav">
+              <InpSearchResults />
             <ol className="category">
               {Routess.ROUTES_APP.map((item, index) => {
                 return (
@@ -49,31 +50,36 @@ function App() {
                   </Link>
                 );
               })}
-              <div className="basement">
-              <h2 className="basement__pageTitle">{page}</h2>
-              <div className="logoBtn">
-                <MdNotifications className="logoBtn__notification" />
-                <Link to={"/allProduct"} className="logoBtn__filter">
-                <MdFilterListAlt
-                  onClick={isModalFilter}
-                  className="filter"
-                />
-                </Link>
-
-                <Link to={"/cart"} className="logoBtn__basket">
-                  <FaShoppingBasket className="basket" />
-                </Link>
-              </div>
-              </div>
             </ol>
           </nav>
+              <div className="basement">
+                <div className="logoBtn">
+                  <Link to={"/quest"} className="logoBtn__question">
+                    <FaQuestion className="question" />
+                  </Link>
+                  <Link to={"/allProduct"} className="logoBtn__filter">
+                    <MdFilterListAlt
+                      onClick={isModalFilter}
+                      className="filter"
+                    />
+                  </Link>
+                  <Link to={"/cart"} className="logoBtn__basket">
+                    <FaShoppingBasket className="basket" />
+                  </Link>
+                </div>
+              </div>
         </div>
         <div className="body__products">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route
               path="/allProduct"
-              element={<AllProduct modalFilter={modalFilter} setModalFilter={setModalFilter} />}
+              element={
+                <AllProduct
+                  modalFilter={modalFilter}
+                  setModalFilter={setModalFilter}
+                />
+              }
             />
             <Route path="/feedback" element={<Feedback />} />
             <Route
@@ -81,6 +87,7 @@ function App() {
               element={<DescriptionProduct />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/quest" element={<FAQ />} />
           </Routes>
         </div>
       </main>

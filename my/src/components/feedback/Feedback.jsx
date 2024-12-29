@@ -76,15 +76,9 @@ export default function Feedback() {
       setModalAddNewFeedback(false);
     }
   };
-  useEffect(() => {
-    console.log(
-      "Оценки:",
-      FeedBack.FDList.map((feedback) => feedback.estimation)
-    );
-  }, [FeedBack.FDList]);
   return (
     <div className="feedbacks">
-      <div className="right-block">
+      <div className="leftBlock">
         <div className="addFeedback" onClick={openClose_modalAddNewFeedback}>
           +
         </div>
@@ -144,7 +138,7 @@ export default function Feedback() {
       <div className="rightBlock">
         <p className="rightBlock__tableEstimation">Средняя оценка магазина: {averageEstimation.toFixed(1)}</p>
         <div className="rightBlock__feedbackList">
-         <FeedbackCard/>;
+         <FeedbackCard/>
         </div>
       </div>
     </div>
