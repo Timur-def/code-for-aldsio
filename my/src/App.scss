@@ -30,7 +30,7 @@ body {
   }
 }
 .header {
-  width: 15vw;
+  width: 230px;
   display: flex;
   flex-direction: row;
   margin-right: auto;
@@ -46,7 +46,7 @@ body {
     font-size: 2rem;
     margin-top: 15px;
     margin-bottom: 15px;
-    width:10vw;
+    width:150px;
   }
 }
 
@@ -62,13 +62,15 @@ body {
     gap: 8px;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
   }
+
 
   &__productCategory {
     font-weight: 500;
     display: flex;
     width: 100vw;
-    height: 80px;
+    height: 100px;
     flex-direction: row;
     justify-content: center;
     background-color: #ffc400;
@@ -113,10 +115,11 @@ body {
   }
   &__title {
     margin-bottom: 5px;
-    font-size: 23px;
+    font-size: 1.2vw;
     width: 100%;
+    font-weight: 600;
     &:hover {
-      font-size: 25px;
+      font-size: 1.4vw;
       transition: 0.2s;
     }
   }

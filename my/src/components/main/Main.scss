@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 108vh;
+  height: 100%;
 }
 
 .recommendations {
@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: row;
   width: 70vw;
-  height: 25vh;
+  max-height: 50vh;
   border-radius: 10px;
   border: 5px solid white;
   margin-top: 80px;

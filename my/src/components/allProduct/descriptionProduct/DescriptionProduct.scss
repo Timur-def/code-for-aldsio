@@ -1,5 +1,5 @@
 .cardDescription {
-  margin-bottom: 80px;
+  margin-top: 5px;
   width: 45vw;
   height:90vh;
   background-color: #fff;
@@ -14,11 +14,11 @@
     width: 40vw;
   }
   &__image{
-    height: 90%;
+    height: 75%;
     border-radius: 15px;
     margin-top: 5px;
     object-fit: cover;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   &__price{
     display: flex-start;

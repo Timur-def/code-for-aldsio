@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 
@@ -15,7 +15,7 @@
   cursor: pointer;
 
   &__inp {
-    height: 120%;
+    height: 35px;
     width: 100%;
     border-radius: 10px;
     border: none;
@@ -28,7 +28,9 @@
     width: 14vw;
     gap: 5px;
     z-index: 2;
-    margin-top: 20px;
+    margin-top:40px;
+    position: absolute;
+    top: 30px;
   }
 
   &__result {
