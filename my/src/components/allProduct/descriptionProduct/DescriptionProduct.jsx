@@ -1,9 +1,10 @@
 import { useLocation } from "react-router-dom";
 import "./DescriptionProduct.scss";
+import AddCartButton from "../addCartButton/AddCartButton";
 export default function DescriptionProduct() {
   const location = useLocation();
   const {data} = location.state || {}; // Получаем описание из state
-  if (!data) {
+  if (!data || !data.id) {
     console.log(location.state);
     return <p>Descr invalid</p>
   }

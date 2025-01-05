@@ -1,5 +1,5 @@
 import "./FeedbackCard.scss";
-import FeedBack from "../feedbackList.json";
+import FeedBack from "./feedbackList.json";
 
 export default function FeedbackCard() {
   return (
@@ -8,8 +8,8 @@ export default function FeedbackCard() {
         return (
           <div className="FBCard" key={item.id}> {/* Добавлен ключ для каждого элемента */}
             <div className="FBCard__upBlock">
-              <h3 className="FBCard__nameUser ">{item.author}</h3>
               <h4 className="FBCard__product">{item.product}</h4>
+              <h3 className="FBCard__nameUser ">{item.author}</h3>
             </div>
             <div className="FBCard__textBlock">
               <h3 className="FBCard__feedback">{item.text}</h3>

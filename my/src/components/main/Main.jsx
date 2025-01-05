@@ -1,6 +1,6 @@
 import "./Main.scss";
 
-import dateProduct from "../feedback/dateProduct.json";
+import dateProduct from "../allProduct/dateProduct.json";
 import HoneyCard from "../allProduct/honeyCard/HoneyCard";
 export default function DescriptionStore() {
   return (
@@ -12,7 +12,7 @@ export default function DescriptionStore() {
             <h3>Для новых покупателей</h3>
             <div>
               {dateProduct.PRODUCT.slice(14, 15).map((item) => {
-                return <HoneyCard key={item.id} data={item} />;
+                return <HoneyCard />;
               })}
             </div>
           </div>
@@ -20,7 +20,7 @@ export default function DescriptionStore() {
             <h3>Подарки на праздики</h3>
             <div>
               {dateProduct.PRODUCT.slice(15).map((item) => {
-                return <HoneyCard key={item.id} data={item} />;
+                return <HoneyCard />;
               })}
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function DescriptionStore() {
             <h3>Для любителей пожевать</h3>
             <div>
               {dateProduct.PRODUCT.slice(6, 7).map((item) => {
-                return <HoneyCard key={item.id} data={item} />;
+                return <HoneyCard />;
               })}
             </div>
           </div>

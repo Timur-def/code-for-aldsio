@@ -16,7 +16,7 @@ const Cart = () => {
         <div>
         <ul  className='cart_HoneyCards'>
           {cart.map((item, index) => (
-             <HoneyCard key={index} data={item}/>
+             <HoneyCard />
           ))}
         </ul>
         </div>

@@ -1,5 +1,5 @@
 import "./InpSearchResults.scss";
-import dateProduct from "../feedback/dateProduct.json";
+import dateProduct from "../allProduct/dateProduct.json";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -45,13 +45,13 @@ export default function InpSearchResults() {
       </div>
 
       <div className="search__results">
-        {searchResults.map((product, indexProduct) => (
+        {searchResults.map((data, indexProduct) => (
           <Link
             to={`/DescriptionProduct`}
             className="search__result"
-            state={{ product }}
+            state={{ data }}
           >
-            <p key={indexProduct}>{product.title} </p>
+            <p key={indexProduct}>{data.title} </p>
           </Link>
         ))}
       </div>

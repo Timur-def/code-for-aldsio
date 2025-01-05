@@ -1,7 +1,7 @@
-import FeedbackCard from "./feedbackCard/FeedbackCard";
+import FeedbackCard from "./FeedbackCard";
 import "./Feedback.scss";
 import { useEffect, useState } from "react";
-import dateProduct from "./dateProduct.json";
+import dateProduct from "../allProduct/dateProduct.json";
 import FeedBack from "./feedbackList.json";
 
 export default function Feedback() {

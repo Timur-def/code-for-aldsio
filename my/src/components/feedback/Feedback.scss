@@ -10,7 +10,7 @@
 
 .addFeedback {
   display: flex;
-  width: 30vw;
+  width: 530px;
   height: 15vh;
   border-radius: 15px;
   border: 1px solid #000000;
@@ -62,13 +62,14 @@
 
 
 .AddFD{
-  width: 30vw;
-  height: 30vh;
+  width: 500px;
+  height: 290px;
   background-color: #fff;
   border-radius: 15px;
   border: 2px solid black;
   margin-top: 10px;
   gap: 20px;
+  padding: 15px;
   margin-left: 15px;
   flex-direction: column;
   display: flex;
@@ -109,4 +110,8 @@
   &:active {
     background-color: #f1cd00;
   }
+}
+
+.leftBlock{
+  margin: 20px;
 }

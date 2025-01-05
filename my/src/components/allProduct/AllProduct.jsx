@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import dataProducts from "../feedback/dateProduct.json";
+import dataProducts from "./dateProduct.json";
 import HoneyCard from "./honeyCard/HoneyCard";
 import "./AllProduct.scss";
 
@@ -36,6 +36,8 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
   };
 
     const handleFilteredProduct = () => {
+      
+      
       let filteredProducts = dataProducts.PRODUCT;
   
       if (isCheckBoxPrice) {
@@ -81,12 +83,14 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
               <p className="texts">
                 От
                 <input
+                className="input"
                   type="number"
                   placeholder={minInpPrice}
                   onChange={handleMinPriceChange}
                 />
                 ₽ до
                 <input
+                className="input"
                   type="number"
                   placeholder={maxInpPrice}
                   onChange={handleMaxPriceChange}
@@ -121,10 +125,7 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
           </button>
         </div>
       )}
-      <div className="cards">
-        {searchResults.map((item, index) => {
-          return <HoneyCard className="honeyCard" key={index} data={item} />;
-        })}
+      <div className="cards"> <HoneyCard className="honeyCard" />;
       </div>
     </>
   );
