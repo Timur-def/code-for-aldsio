@@ -1,7 +1,7 @@
-import "./Main.scss";
+import "./Main.scss"
 
-import dateProduct from "../allProduct/dateProduct.json";
-import HoneyCard from "../allProduct/honeyCard/HoneyCard";
+import dateProduct from "../allProduct/dateProduct.json"
+import HoneyCard from "../allProduct/honeyCard/HoneyCard"
 export default function DescriptionStore() {
   return (
     <div className="main">
@@ -12,7 +12,7 @@ export default function DescriptionStore() {
             <h3>Для новых покупателей</h3>
             <div>
               {dateProduct.PRODUCT.slice(14, 15).map((item) => {
-                return <HoneyCard />;
+                return <HoneyCard data={item} />
               })}
             </div>
           </div>
@@ -20,7 +20,7 @@ export default function DescriptionStore() {
             <h3>Подарки на праздики</h3>
             <div>
               {dateProduct.PRODUCT.slice(15).map((item) => {
-                return <HoneyCard />;
+                return <HoneyCard data={item} />
               })}
             </div>
           </div>
@@ -28,7 +28,7 @@ export default function DescriptionStore() {
             <h3>Для любителей пожевать</h3>
             <div>
               {dateProduct.PRODUCT.slice(6, 7).map((item, index) => {
-                return <HoneyCard key={index} />;
+                return <HoneyCard key={index} data={item} />
               })}
             </div>
           </div>
@@ -50,14 +50,14 @@ export default function DescriptionStore() {
         <div className="contactInf">
           <h2>Контактная информация</h2>
           <div className="contactInf__block">
-          <p className="contactInf__upForEmail">
-            Обратная связь и деловые предложения:
-          </p>
-          <p className="contactInf__e-mail">BeeStore@yandex.ru</p>
-          <p className="contactInf__numPhone">8-800-555-35-35</p>
+            <p className="contactInf__upForEmail">
+              Обратная связь и деловые предложения:
+            </p>
+            <p className="contactInf__e-mail">BeeStore@yandex.ru</p>
+            <p className="contactInf__numPhone">8-800-555-35-35</p>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
