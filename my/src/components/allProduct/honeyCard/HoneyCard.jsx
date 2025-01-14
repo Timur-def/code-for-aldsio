@@ -23,7 +23,7 @@ export default function HoneyCard() {
             <div className="card__text">
               <h3 className="card__price">{data.price}₽</h3>
               <p className="card__title">{data.title}</p>
-              <AddCartButton className="card__btn" />
+              <AddCartButton className="card__btn" data={data} />
             </div>
           </div>
         );

@@ -27,8 +27,8 @@ export default function DescriptionStore() {
           <div className="recommendations__block-recommendation">
             <h3>Для любителей пожевать</h3>
             <div>
-              {dateProduct.PRODUCT.slice(6, 7).map((item) => {
-                return <HoneyCard />;
+              {dateProduct.PRODUCT.slice(6, 7).map((item, index) => {
+                return <HoneyCard key={index} />;
               })}
             </div>
           </div>
