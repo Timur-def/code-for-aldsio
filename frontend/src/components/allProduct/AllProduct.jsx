@@ -4,7 +4,7 @@ import "./AllProduct.scss"
 import HoneyCard from "./honeyCard/HoneyCard"
 export default function AllProduct({ setModalFilter, modalFilter }) {
 
-  const { products, fetchProducts, setProducts } = useProductStore()
+  const { products, fetchProducts } = useProductStore()
   const prices = products.map(product => product.price)
   const minInpPrice = prices.length > 0 ? Math.min(...prices) : 0 // Минимальная цена
   const maxInpPrice = prices.length > 0 ? Math.max(...prices) : Infinity // Максимальная цена
@@ -14,7 +14,6 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
   const maxPriceRef = useRef(maxInpPrice)
   const [isCheckBoxPrice, setIsCheckBoxPrice] = useState(false)
   const [isCheckBoxVolume, setIsCheckBoxVolume] = useState(false)
-
   useEffect(() => {
     fetchProducts()
   }, [fetchProducts])
@@ -38,7 +37,7 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
 
   useEffect(() => {
     if (products.length > 0) {
-      setSearchResults(products) // Инициализируем результаты сразу всеми продуктами
+      setSearchResults(products)
       const prices = products.map(product => product.price)
       minPriceRef.current = Math.min(...prices)
       maxPriceRef.current = Math.max(...prices)
@@ -46,9 +45,9 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
   }, [products])
 
   const handleFilteredProduct = () => {
-    let filteredProducts = [...products] // Используем исходные продукты для фильтрации
+    let filteredProducts = [...products]
 
-    // Фильтруем товары по цене, если выбран чекбокс цены
+
     if (isCheckBoxPrice) {
       const minPrice = parseFloat(minPriceRef.current) || 0
       const maxPrice = parseFloat(maxPriceRef.current) || Infinity
@@ -58,19 +57,18 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
       )
     }
 
-    // Фильтруем по объему, если выбран чекбокс объема
     if (isCheckBoxVolume) {
       filteredProducts = filteredProducts.filter((product) =>
         product.volume == optionValue
       )
     }
 
-    // Обновляем результаты поиска
+
     setSearchResults(filteredProducts)
 
     setIsCheckBoxVolume(false)
     setIsCheckBoxPrice(false)
-    // Закрываем модальное окно
+
     setModalFilter(false)
   }
 
@@ -138,12 +136,13 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
           </button>
         </div>
       )}
-      {!products ? <p>Загрузка...</p> : <div className="cards">
-        {searchResults.map((data, index) => {
-          return <HoneyCard className="honeyCard" data={data} key={index} />
-        })}
+      {!products ? <p>Загрузка...</p> :
+        <div className="cards">
+          {searchResults.map((data, index) => {
+            return <HoneyCard className="honeyCard" data={data} key={index} />
+          })}
 
-      </div>}
+        </div>}
 
     </>
   )

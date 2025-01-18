@@ -35,14 +35,8 @@ export const useCartStore = create((set) => ({
         }
         )
         const data = await res.json()
-        if (data.succes) {
-            console.log(1)
-
-        }
-
-
         set(state => ({
-            cart: state.cart.filter(product => product._id !== id)
+            product: state.products.filter(product => product._id !== id)
         }))
         return { succes: true, message: "Товар успешно удален" }
     },

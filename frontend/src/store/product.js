@@ -3,7 +3,6 @@ import { create } from 'zustand'
 export const useProductStore = create((set) => ({
 	products: [],
 	setProducts: (products) => set({ products }),
-
 	createProduct: async (newProduct) => {
 		if (!newProduct.name || !newProduct.price || !newProduct.image) {
 			return { succes: false, message: "Нету продукта" }
@@ -22,7 +21,6 @@ export const useProductStore = create((set) => ({
 		set((state) => ({ products: [...state.products, data.data] }))
 		return { succes: true, message: "Товар успешно создан" }
 	},
-
 	fetchProducts: async () => {
 		const res = await fetch("http://localhost:5000/api/products")
 		const data = await res.json()
@@ -30,6 +28,7 @@ export const useProductStore = create((set) => ({
 	},
 	deleteProducts: async (pid) => {
 		const res = await fetch(`http://localhost:5000/api/products/${pid}`, {
+
 			method: "DELETE"
 		}
 		)
