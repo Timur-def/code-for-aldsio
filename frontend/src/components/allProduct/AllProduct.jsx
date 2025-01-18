@@ -1,18 +1,23 @@
 import { useEffect, useRef, useState } from "react"
+import { useProductStore } from "../../store/product"
 import "./AllProduct.scss"
-import dataProducts from "./dateProduct.json"
 import HoneyCard from "./honeyCard/HoneyCard"
-
 export default function AllProduct({ setModalFilter, modalFilter }) {
-  const prices = dataProducts.PRODUCT.map(product => product.price)
+
+  const { products, fetchProducts, setProducts } = useProductStore()
+  const prices = products.map(product => product.price)
   const minInpPrice = prices.length > 0 ? Math.min(...prices) : 0 // Минимальная цена
   const maxInpPrice = prices.length > 0 ? Math.max(...prices) : Infinity // Максимальная цена
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState([...products])
   const [optionValue, setOptionValue] = useState(0.5 || "")
   const minPriceRef = useRef(minInpPrice)
   const maxPriceRef = useRef(maxInpPrice)
   const [isCheckBoxPrice, setIsCheckBoxPrice] = useState(false)
   const [isCheckBoxVolume, setIsCheckBoxVolume] = useState(false)
+
+  useEffect(() => {
+    fetchProducts()
+  }, [fetchProducts])
 
   const handleOptionChange = (event) => {
     setOptionValue(event.target.value)
@@ -22,10 +27,6 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
     setIsCheckBoxPrice(e.target.checked)
   }
 
-  // Используем useEffect для установки всех товаров при первом рендере
-  useEffect(() => {
-    setSearchResults(dataProducts.PRODUCT)
-  }, [])
 
   const handleMinPriceChange = (event) => {
     minPriceRef.current = event.target.value
@@ -35,35 +36,47 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
     maxPriceRef.current = event.target.value
   }
 
+  useEffect(() => {
+    if (products.length > 0) {
+      setSearchResults(products) // Инициализируем результаты сразу всеми продуктами
+      const prices = products.map(product => product.price)
+      minPriceRef.current = Math.min(...prices)
+      maxPriceRef.current = Math.max(...prices)
+    }
+  }, [products])
+
   const handleFilteredProduct = () => {
+    let filteredProducts = [...products] // Используем исходные продукты для фильтрации
 
-
-    let filteredProducts = dataProducts.PRODUCT
-
+    // Фильтруем товары по цене, если выбран чекбокс цены
     if (isCheckBoxPrice) {
-      const minPrice = minPriceRef.current ? parseFloat(minPriceRef.current) : 0
-      const maxPrice = maxPriceRef.current ? parseFloat(maxPriceRef.current) : Infinity
+      const minPrice = parseFloat(minPriceRef.current) || 0
+      const maxPrice = parseFloat(maxPriceRef.current) || Infinity
 
-      // Фильтруем товары по цене
-      filteredProducts = filteredProducts.filter((product) => {
-        return product.price >= minPrice && product.price <= maxPrice
-      })
+      filteredProducts = filteredProducts.filter((product) =>
+        product.price >= minPrice && product.price <= maxPrice
+      )
     }
 
+    // Фильтруем по объему, если выбран чекбокс объема
     if (isCheckBoxVolume) {
-      // Фильтруем уже отфильтрованные товары по объему
-      filteredProducts = filteredProducts.filter((product) => {
-        return product.volume == optionValue
-      })
+      filteredProducts = filteredProducts.filter((product) =>
+        product.volume == optionValue
+      )
     }
 
+    // Обновляем результаты поиска
     setSearchResults(filteredProducts)
+
+    setIsCheckBoxVolume(false)
+    setIsCheckBoxPrice(false)
+    // Закрываем модальное окно
     setModalFilter(false)
   }
 
+
   const handleIsCheckBoxVolume = (e) => {
     setIsCheckBoxVolume(e.target.checked)
-    console.log(e.target.checked)
   }
   return (
     <>
@@ -110,7 +123,7 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
                 Выбирете объём тары
                 <select onChange={handleOptionChange}>
                   {[
-                    ...new Set(dataProducts.PRODUCT.map((item) => item.volume)),
+                    ...new Set(products.map((item) => item.volume)),
                   ].map((volume, index) => (
                     <option value={volume} key={index}>
                       {volume}
@@ -125,12 +138,13 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
           </button>
         </div>
       )}
-      <div className="cards">
-        {dataProducts.PRODUCT.map((data, index) => {
+      {!products ? <p>Загрузка...</p> : <div className="cards">
+        {searchResults.map((data, index) => {
           return <HoneyCard className="honeyCard" data={data} key={index} />
         })}
 
-      </div>
+      </div>}
+
     </>
   )
 }

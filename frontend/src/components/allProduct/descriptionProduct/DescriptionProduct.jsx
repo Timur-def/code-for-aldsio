@@ -4,7 +4,7 @@ export default function DescriptionProduct() {
   const location = useLocation()
   const { data } = location.state || {} // Получаем описание из state
   if (!data || !data.id) {
-    console.log(location.state)
+    // console.log(location.state)
     return <p>Descr invalid</p>
   }
 
