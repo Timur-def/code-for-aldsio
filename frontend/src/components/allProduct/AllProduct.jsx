@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import "./AllProduct.scss"
 import dataProducts from "./dateProduct.json"
 import HoneyCard from "./honeyCard/HoneyCard"
-
+import { useCartStore } from "../../store/cart"
 export default function AllProduct({ setModalFilter, modalFilter }) {
   const prices = dataProducts.PRODUCT.map(product => product.price)
   const minInpPrice = prices.length > 0 ? Math.min(...prices) : 0 // Минимальная цена
@@ -13,7 +13,11 @@ export default function AllProduct({ setModalFilter, modalFilter }) {
   const maxPriceRef = useRef(maxInpPrice)
   const [isCheckBoxPrice, setIsCheckBoxPrice] = useState(false)
   const [isCheckBoxVolume, setIsCheckBoxVolume] = useState(false)
+  const { cart, fetchCart } = useCartStore()
+  useEffect(() => {
+    fetchCart()
 
+  }, [fetchCart])
   const handleOptionChange = (event) => {
     setOptionValue(event.target.value)
   }
